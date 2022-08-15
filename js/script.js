@@ -1,26 +1,63 @@
 'use strict';
+const user = {
+    name: 'Alex',
+    surname: 'Smith',
+    birthday: '20/04/1993',
+    showMyPublicData: function () {
+        console.log(`${this.name} ${this.surname}`);
+    }
+}
 
-const boxesQuery = document.querySelectorAll('.box');
-const boxesGet = document.getElementsByClassName('box');
+const userMap = new Map(Object.entries(user));
+console.log(userMap);
 
-boxesQuery.forEach(box => {
-    if (box.matches('.this')) console.log(box);
+const newUserObj = Object.fromEntries(userMap);
+console.log(newUserObj);
+
+
+
+const shops = [
+    {rice: 500},
+    {oil: 200},
+    {bread: 50}
+];
+
+const budget = [5000, 15000, 25000];
+
+const map = new Map([
+    [{paper: 400}, 8000]
+]);
+
+shops.forEach((shop, i) => {
+    map.set(shop, budget[i]);
 })
 
-console.log(boxesQuery[0].closest('.wrapper'));
+console.log(map);
+// console.log(map.get(shops[0]));
+// console.log(map.has(shops[0]));
+// map.delete(key);
+// map.clear();
+// map.size;
+// map.keys();
 
-// boxesQuery[0].remove();
-// boxesGet[0].remove();
-//
-// for (let i = 0; i < 5; i++) {
-//     const div = document.createElement(div);
-//     div.classList.add('box');
-//     // document.body.append(div);
-//     boxesGet[boxesGet.length] = div;
+// const goods = [];
+// for(let shop of map.keys()) {
+//     goods.push(Object.keys(shop)[0])
+// };
+// console.log(goods);
+
+// for (let price of map.values()) {
+//     console.log(price);
 // }
-//
-// console.log(boxesQuery);
-// console.log(boxesGet);
-// // console.log(document.body.children);
-//
-// console.log(Array.from(boxesGet));
+
+// for (let price of map.entries()) {
+//     console.log(price);
+// }
+
+// for (let [shop, price] of map.entries()) {
+//     console.log(price, shop);
+// }
+
+// map.forEach((value, key, map) => {
+//     console.log(key, value);
+// })
