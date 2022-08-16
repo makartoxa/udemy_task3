@@ -1,32 +1,14 @@
 'use strict';
-// SET. Особый вид коллекции по типу массива, где каждое значение может повторятся только один раз!
+// BidInt
 
-const arr = ['Alex', 'Anna', 'Oleg', 'Alex'];
+// const bidint = 1232457598467281365765105816n;
+const someBigint = BigInt(1232457598467281365765105816);
 
-function unique(arr) {
-    return Array.from(new Set(arr));
-}
+console.log(2n === 2);   /// +, -, *, ==, ===, / - будет округлять полученое значение
 
-console.log(unique(arr));
+let bidint = 1n;
+let number = 2;
 
-// const set = new Set();
-//
-// set.add('Ivan')
-//     .add('Oleg');
-//
-// console.log(set);
-//
-// set.delete(value);
-// set.has(value);
-// set.clear();
-// set.size;
-//
-// for (let value of set) console.log(value);
-// set.forEach(value, valueAgaing, set) => {
-//     console.log(value, valueAgaing);
-// }
-//
-// console.log(set.value());
-// console.log(set.keys());
-// console.log(set.entries());
+console.log(bidint + BigInt(number));
+console.log(Number(bidint) + number);
 
