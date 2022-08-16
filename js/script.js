@@ -1,63 +1,32 @@
 'use strict';
-const user = {
-    name: 'Alex',
-    surname: 'Smith',
-    birthday: '20/04/1993',
-    showMyPublicData: function () {
-        console.log(`${this.name} ${this.surname}`);
-    }
+// SET. Особый вид коллекции по типу массива, где каждое значение может повторятся только один раз!
+
+const arr = ['Alex', 'Anna', 'Oleg', 'Alex'];
+
+function unique(arr) {
+    return Array.from(new Set(arr));
 }
 
-const userMap = new Map(Object.entries(user));
-console.log(userMap);
+console.log(unique(arr));
 
-const newUserObj = Object.fromEntries(userMap);
-console.log(newUserObj);
-
-
-
-const shops = [
-    {rice: 500},
-    {oil: 200},
-    {bread: 50}
-];
-
-const budget = [5000, 15000, 25000];
-
-const map = new Map([
-    [{paper: 400}, 8000]
-]);
-
-shops.forEach((shop, i) => {
-    map.set(shop, budget[i]);
-})
-
-console.log(map);
-// console.log(map.get(shops[0]));
-// console.log(map.has(shops[0]));
-// map.delete(key);
-// map.clear();
-// map.size;
-// map.keys();
-
-// const goods = [];
-// for(let shop of map.keys()) {
-//     goods.push(Object.keys(shop)[0])
-// };
-// console.log(goods);
-
-// for (let price of map.values()) {
-//     console.log(price);
+// const set = new Set();
+//
+// set.add('Ivan')
+//     .add('Oleg');
+//
+// console.log(set);
+//
+// set.delete(value);
+// set.has(value);
+// set.clear();
+// set.size;
+//
+// for (let value of set) console.log(value);
+// set.forEach(value, valueAgaing, set) => {
+//     console.log(value, valueAgaing);
 // }
+//
+// console.log(set.value());
+// console.log(set.keys());
+// console.log(set.entries());
 
-// for (let price of map.entries()) {
-//     console.log(price);
-// }
-
-// for (let [shop, price] of map.entries()) {
-//     console.log(price, shop);
-// }
-
-// map.forEach((value, key, map) => {
-//     console.log(key, value);
-// })
